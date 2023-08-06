@@ -1,5 +1,5 @@
 export function removeProperties<
-	T extends Record<string, unknown>,
+	T extends object,
 	K extends string | number | symbol,
 >(obj: T, remove: K[]): Omit<T, K> {
 	return (
