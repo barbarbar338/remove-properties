@@ -8,8 +8,11 @@ export function removeProperties<
 			| number
 			| symbol
 		)[]
-	).reduce((newObj, key) => {
-		(newObj as any)[key] = (obj as any)[key];
-		return newObj;
-	}, {} as Omit<T, K>);
+	).reduce(
+		(newObj, key) => {
+			(newObj as any)[key] = (obj as any)[key];
+			return newObj;
+		},
+		{} as Omit<T, K>,
+	);
 }
